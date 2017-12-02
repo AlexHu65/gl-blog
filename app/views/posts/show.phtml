@@ -1,0 +1,158 @@
+<?php $this->assets->outputCss(); ?>
+<section class="jumbotron">
+    <div class="container">
+        <h1>Gameloft Blog</h1>
+        <p>Here something</p>
+    </div>
+</section>
+<section class="main container">
+    <div class="row">
+        <section class="posts col-md-9">
+            <div class="miga-de-pan">
+                <ol class="breadcrumb">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li class="active">Diseño Web</li>
+                </ol>
+            </div>
+            <article class="post clearfix">
+                <?php if (isset($post)) { ?>
+                    <article class="post clearfix">
+                        <a href="#" class="thumb pull-left">
+                            <img class="img-thumbnail" src="/public/img/img2.jpg" alt="">
+                        </a>
+                        <h2 class="post-title">
+                            <a href="#">Inicia proyectos HTML5 mas rápido con Initializr</a>
+                        </h2>
+                        <p><span class="post-fecha">26 de Enero de 2015</span> por <span class="post-autor"><a href="#">Carlos Arturo</a></span>
+                        </p>
+                        <p class="post-contenido text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </article>
+                <?php } ?>
+                <h3>Comentarios</h3>
+                <?php if (isset($comments)) { ?>
+                    <article class="clearfix">
+                        <div class="row">
+                            <?php
+                            if (count($comments->items) > 0) {
+                            foreach ($comments->items as $comment) { ?>
+                                <div class="col-sm-12">
+                                    <div class="panel panel-white post panel-shadow">
+                                        <div class="post-heading">
+                                            <div class="pull-left image">
+                                                <img src="http://bootdey.com/img/Content/user_1.jpg"
+                                                     class="img-circle avatar" alt="user profile image">
+                                            </div>
+                                            <div class="pull-left meta">
+                                                <div class="title h5">
+                                                    <a href="#"><b>Ryan Haywood</b></a>
+                                                    made a post.
+                                                </div>
+                                                <h6 class="text-muted time"><?= $comment['date']; ?></h6>
+                                            </div>
+                                        </div>
+                                        <div class="post-description">
+                                            <p>Bootdey is a gallery of free snippets resources templates and utilities
+                                                for bootstrap css hmtl js framework. Codes for developers and web
+                                                designers</p>
+                                            <div class="stats">
+                                                <a style="color: green; padding: 5px;" href="#">
+                                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                                    <i class="fa fa-thumbs-up icon"></i>2
+                                                </a>
+                                                <a style="color: red; padding: 5px;" href="#">
+                                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                                    <i class="fa fa-thumbs-down icon"></i>12
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+                        <nav>
+                            <div class="center-block">
+                                <ul class="pagination">
+                                    <li><a href="?c=<?= $comments->first; ?>">Primera</a></li>
+                                    <li><a id="before" href="?c=<?= $comments->before; ?>">&laquo;<span
+                                                    class="sr-only">Anterior</span></a>
+                                    </li>
+                                    <?php for ($i = 1; $comments->total_pages >= $i; $i++) { ?>
+                                        <li><a id="page" href="?c=<?= $i; ?>"><?= $i; ?></a></li>
+                                        <?php
+                                        if ($i >= 10) {
+                                            break;
+                                        }
+                                    }
+                                    if ($comments->current != $comments->total_pages) { ?>
+                                        <li><a id="next" href="?c=<?= $comments->next; ?>">&raquo;<span class="sr-only">Siguiente</span></a>
+                                        </li>
+                                        <li><a id="last" href="?c=<?= $comments->last; ?>">Ultima</a></li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </nav>
+                        <?php } ?>
+                    </article>
+                <?php } ?>
+                <form id="comments" class="comments-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input readonly value="<?= $_SESSION['user']['name'] . $_SESSION['user']['lastname'] ?>"
+                               class="form-control" id="nombre" type="text" name="nombre"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Comment:</label><br>
+                        <textarea name="comment" id="comment" cols="50%" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Enviar</button>
+                </form>
+            </article>
+        </section>
+        <aside class="col-md-3 hidden-xs hidden-sm">
+            <h4>Categorias</h4>
+            <div class="list-group">
+                <a href="#" class="list-group-item active">Diseño Web</a>
+                <a href="#" class="list-group-item">CSS</a>
+                <a href="#" class="list-group-item">Cursos</a>
+                <a href="#" class="list-group-item">Desarrollo Web</a>
+                <a href="#" class="list-group-item">Elementos Web</a>
+                <a href="#" class="list-group-item">Jquery</a>
+                <a href="#" class="list-group-item">Recursos y Herramientas</a>
+            </div>
+
+            <h4>Articulos Recientes</h4>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Inicia proyectos HTML5 mas rápido con Initializr</h4>
+                <p class="list-group-item-text">Aprende como iniciar un proyecto HTML5 en 15 minutos con Initialzr.</p>
+            </a>
+
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Como hacer una plantilla básica con PHP (templates)</h4>
+                <p class="list-group-item-text">LoremAprende como transformar tu diseño web en una plantilla dinámica
+                    con PHP.</p>
+            </a>
+
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Como cambiar el cursor de tu sitio web con propiedad CSS</h4>
+                <p class="list-group-item-text">Aprende como cambiar el cursor de los elementos de tu sitio web con
+                    CSS.</p>
+            </a>
+        </aside>
+    </div>
+</section>
+
+
+
+
+
+
+
+

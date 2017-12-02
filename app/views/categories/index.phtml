@@ -1,0 +1,101 @@
+<?php $this->assets->outputCss(); ?>
+<section class="jumbotron">
+    <div class="container">
+        <h1>Gameloft Blog</h1>
+        <p>Here something</p>
+    </div>
+</section>
+<section class="main container">
+    <div class="row">
+        <section class="posts col-md-9">
+            <div class="miga-de-pan">
+                <ol class="breadcrumb">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li class="active">Diseño Web</li>
+                </ol>
+            </div>
+            <article class="post clearfix">
+
+                <div>
+                    <div class="accordion-option">
+                        <h3 class="title">Categorias</h3>
+                        <a href="javascript:void(0)" class="toggle-accordion active" accordion-id="#accordion"></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <?php if (isset($categories)) {
+
+                            for ($i = 0; $i < count($categories); $i++) {
+
+                                ?>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="heading<?= $i ?>">
+                                        <h4 class="panel-title">
+                                            <a class="active" href="#collapse<?= $i ?>" aria-expanded="true"
+                                               aria-controls="collapse<?= $i ?>"
+                                               role="button" data-toggle="collapse" data-parent="#accordion">
+                                                <?= $categories[$i]['name']; ?>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse<?= $i ?>" class="panel-collapse collapse in" role="tabpanel"
+                                         aria-labelledby="heading<?= $i ?>">
+                                        <div class="panel-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, harum ipsam
+                                            libero
+                                            provident quaerat reiciendis voluptates? Dolores expedita incidunt laborum
+                                            molestias
+                                            optio sed sequi, sint unde? Labore laudantium officia voluptatem?
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <?php }
+
+                        } ?>
+
+                    </div>
+                </div>
+            </article>
+        </section>
+        <aside class="col-md-3 hidden-xs hidden-sm">
+            <h4>Categorias</h4>
+            <div class="list-group">
+                <a href="#" class="list-group-item active">Diseño Web</a>
+                <a href="#" class="list-group-item">CSS</a>
+                <a href="#" class="list-group-item">Cursos</a>
+                <a href="#" class="list-group-item">Desarrollo Web</a>
+                <a href="#" class="list-group-item">Elementos Web</a>
+                <a href="#" class="list-group-item">Jquery</a>
+                <a href="#" class="list-group-item">Recursos y Herramientas</a>
+            </div>
+
+            <h4>Articulos Recientes</h4>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Inicia proyectos HTML5 mas rápido con Initializr</h4>
+                <p class="list-group-item-text">Aprende como iniciar un proyecto HTML5 en 15 minutos con Initialzr.</p>
+            </a>
+
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Como hacer una plantilla básica con PHP (templates)</h4>
+                <p class="list-group-item-text">LoremAprende como transformar tu diseño web en una plantilla dinámica
+                    con PHP.</p>
+            </a>
+
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Como cambiar el cursor de tu sitio web con propiedad CSS</h4>
+                <p class="list-group-item-text">Aprende como cambiar el cursor de los elementos de tu sitio web con
+                    CSS.</p>
+            </a>
+        </aside>
+    </div>
+</section>
+
+
+
+
+
+
+
+

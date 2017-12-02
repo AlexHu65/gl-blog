@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?php $this->assets->outputCss(); ?>
+    <title>Gameloft tools</title>
+</head>
+<header>
+    <?php if (isset($_SESSION['user']) && $_SESSION['user']['logged']) { ?>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navegacion-fm">
+                        <span class="sr-only">Desplegar / Ocultar Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/gl-blog/"><img src="/public/img/logo2.png"></a>
+                </div>
+                <!--Menu -->
+                <div class="collapse navbar-collapse" id="navegacion-fm">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Inicio</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                Categorias <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Categoria #1</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Categoria #2</a></li>
+                                <li><a href="#">Categoria #3</a></li>
+                                <li><a href="#">Categoria #4</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation" class="dropdown ">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                <span class="glyphicon glyphicon-user"></span><span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Perfil</a></li>
+                                <li><a href="#">Temas / Categorias</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/accounts/signout/"><span class="glyphicon glyphicon-off"></span> Cerrar
+                                        Sesion</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <form action="" class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="buscar">
+                        </div>
+                        <button type="submit" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    <?php } ?>
+</header>
+<body>

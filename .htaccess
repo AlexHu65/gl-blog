@@ -1,0 +1,7 @@
+#/programmatic/.htaccess
+# I use this htaccess to create the url for the /public directory.
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule  ^$ public/    [L]
+    RewriteRule  ((?s).*) public/$1 [L]
+</IfModule>

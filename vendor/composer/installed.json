@@ -1,0 +1,61 @@
+[
+    {
+        "name": "phalcon/breadcrumbs",
+        "version": "v1.3.3",
+        "version_normalized": "1.3.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phalcon/breadcrumbs.git",
+            "reference": "fadf6277d4773573baccd4357f6fc60ca8f2e18d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phalcon/breadcrumbs/zipball/fadf6277d4773573baccd4357f6fc60ca8f2e18d",
+            "reference": "fadf6277d4773573baccd4357f6fc60ca8f2e18d",
+            "shasum": ""
+        },
+        "require": {
+            "ext-phalcon": ">=2.0 <4.0",
+            "php": ">= 5.5 <7.2"
+        },
+        "require-dev": {
+            "codeception/codeception": "^2.3",
+            "codeception/specify": "^0.4",
+            "codeception/verify": "^0.3",
+            "myclabs/deep-copy": "1.6.1",
+            "phpdocumentor/reflection-docblock": "^2.0",
+            "phpunit/phpunit": "^4.8",
+            "squizlabs/php_codesniffer": "^2.8"
+        },
+        "time": "2017-10-21T19:44:15+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Phalcon\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Phalcon Team",
+                "email": "team@phalconphp.com",
+                "homepage": "https://phalconphp.com/en/team"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/phalcon/breadcrumbs/graphs/contributors"
+            }
+        ],
+        "description": "Powerful and flexible component for building site breadcrumbs in Phalcon 2+.",
+        "homepage": "https://github.com/phalcon/breadcrumbs",
+        "keywords": [
+            "breadcrumbs",
+            "crumbs",
+            "phalcon"
+        ]
+    }
+]
