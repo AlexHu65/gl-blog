@@ -1,8 +1,6 @@
 <?php
 
 use Blog\Models\Users;
-
-
 class AccountsController extends ControllerBase
 {
     /**

@@ -12,8 +12,8 @@ $loader->registerDirs([
 
 //Alex: Add namespaces according phalcon doc.
 $loader->registerNamespaces([
-    'Blog\Models' => dirname(__DIR__) . '/models',
-    'Blog\Controllers' => dirname(__DIR__) . '/controllers',
+    'Blog\Models' => dirname(__DIR__) . '/models/',
+    'Blog\Controllers' => dirname(__DIR__) . '/controllers/',
     'Blog\Views\Auth' => dirname(__DIR__) . '/views/',
-    'Blog\Library' => dirname(__DIR__) . '/library'
+    'Blog\Library' => dirname(__DIR__) . '/library',
 ])->register();

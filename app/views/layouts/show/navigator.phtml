@@ -1,0 +1,25 @@
+<nav>
+    <div class="center-block">
+        <ul class="pagination">
+            <li><a href="?c=<?= $comments->first; ?>">Primera</a></li>
+            <li><a id="before" href="?c=<?= $comments->before; ?>">&laquo;<span
+                        class="sr-only">Anterior</span></a>
+            </li>
+            <?php for ($i = 1; $comments->total_pages >= $i; $i++) { ?>
+                <li class="<?php if ($comments->current == $i){
+                    //add class active
+                    echo 'active';
+                } ?>"><a id="page" href="?c=<?= $i; ?>"><?= $i; ?></a></li>
+                <?php
+                if ($i >= 10) {
+                    break;
+                }
+            }
+            if ($comments->current != $comments->total_pages) { ?>
+                <li><a id="next" href="?c=<?= $comments->next; ?>">&raquo;<span class="sr-only">Siguiente</span></a>
+                </li>
+                <li><a id="last" href="?c=<?= $comments->last; ?>">Ultima</a></li>
+            <?php } ?>
+        </ul>
+    </div>
+</nav>

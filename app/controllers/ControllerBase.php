@@ -5,6 +5,7 @@ session_start();
 use Phalcon\Mvc\Controller;
 use Blog\Library\Auth\SessionManager;
 
+
 class ControllerBase extends Controller
 {
     public function onConstruct()
@@ -20,6 +21,8 @@ class ControllerBase extends Controller
         $this->assets->addJs('js/jquery-3.2.1.js');
         $this->assets->addJs('/js/bootstrap.min.js');
         $this->assets->addJs('/js/core.js');
+
+
     }
 
     /**
@@ -60,8 +63,5 @@ class ControllerBase extends Controller
     {
         $session = new SessionManager();
         return $session;
-
-
     }
-
 }

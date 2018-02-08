@@ -1,0 +1,26 @@
+<nav>
+    <div class="center-block">
+        <ul class="pagination">
+            <li><a href="/gl-blog/">Primera</a></li>
+            <li><a id="before" href="?p=<?= $posts->before; ?>">&laquo;<span
+                            class="sr-only">Anterior</span></a>
+            </li>
+            <?php for ($i = 1; $posts->total_pages >= $i; $i++) { ?>
+                <li class="<?php if ($posts->current == $i) {
+                    echo 'active';
+                } ?>">
+                    <a id="page" class="active" href="?p=<?= $i; ?>"><?= $i; ?></a></li>
+                <?php
+                if ($i >= 10) {
+                    break;
+                }
+            }
+            if ($posts->current != $posts->total_pages) { ?>
+                <li><a id="next" href="?p=<?= $posts->next; ?>">&raquo;<span
+                                class="sr-only">Siguiente</span></a>
+                </li>
+                <li><a id="last" href="?p=<?= $posts->last; ?>">Ultima</a></li>
+            <?php } ?>
+        </ul>
+    </div>
+</nav>
